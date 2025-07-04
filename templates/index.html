@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crime Records Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="main-body">
+
+    <div class="container">
+        <header class="header">
+            <h1>Crime Records Management System</h1>
+            <p class="tagline">Securely manage crime reports and suspect data</p>
+        </header>
+
+        <nav class="navigation">
+            
+            <a href="{{ url_for('signup') }}" class="nav-button">Sign Up</a>
+            <a href="{{ url_for('login') }}" class="nav-button">Login</a>
+        </nav>
+    </div>
+
+</body>
+</html>
