@@ -1,3 +1,61 @@
+/* ---------- General Elements ---------- */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('/static/images/police-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    height: 100%;
+}
+
+/* ---------- Container ---------- */
+
+.container {
+    margin: 100px 40px;
+    height: 40vh;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* ---------- Headers ---------- */
+
+.header h1 {
+    color: #00aced;
+    padding: 30px;
+    margin-bottom: 10px;
+    font-size: 2.4rem;
+}
+
+.header h2 {
+    color: #00aced;
+    padding: 30px;
+    margin-bottom: 10px;
+    font-size: 2.4rem;
+}
+
+
+.tagline {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+/* ---------- Navigation ---------- */
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
 .nav-button {
     padding: 12px 24px;
     font-size: 1rem;
@@ -18,62 +76,6 @@
     transform: scale(1.05);
 }
 
-body,
-html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background: url('/static/images/police-bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    height: 100%;
-}
-
-.container {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    text-align: center;
-}
-
-.header h1,
-.header h2 {
-    color: #00aced;
-    margin-bottom: 10px;
-    font-size: 2.4rem;
-}
-
-.tagline {
-    font-size: 1.1rem;
-    color: #ccc;
-    margin-bottom: 25px;
-}
-
-.navigation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.nav-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 10px;
-    background-color: #00aced;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.nav-button:hover {
-    background-color: #0084b4;
-}
-
 .logout {
     background-color: #e74c3c;
 }
@@ -82,7 +84,8 @@ html {
     background-color: #c0392b;
 }
 
-/* Forms (Login, Register) */
+/* ---------- Forms ---------- */
+
 .auth-form {
     display: flex;
     flex-direction: column;
@@ -93,7 +96,8 @@ html {
 .auth-form input,
 .auth-form textarea,
 .auth-form select {
-    width: 100%;
+    width: 70%;
+    margin: 0 250px 0 280px; 
     padding: 12px;
     border-radius: 8px;
     border: none;
@@ -116,9 +120,10 @@ html {
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
 }
 
-/* Submit Buttons */
 .auth-form button,
 button {
+    width: 50%;
+    margin: 0 300px 0 0px; 
     padding: 12px;
     font-size: 16px;
     border: none;
@@ -134,37 +139,56 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* Crime Report Card */
+/* ---------- Crime List ---------- */
+
 .crime-list {
     margin-top: 30px;
     text-align: left;
 }
 
+/* ---------- Updated Crime Card ---------- */
+
 .crime-card {
-    background: rgba(255, 255, 255, 0.08);
-    margin: 0 100px 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
     padding: 15px 20px;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin: 0 100px 15px 100px;
+    background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
+    flex-wrap: wrap;
 }
 
 .crime-card:hover {
     transform: scale(1.02);
 }
 
-.crime-card strong {
-    color: #00aced;
-    font-weight: 600;
+/* ---------- Card Inner Sections ---------- */
+
+.card-details {
+    flex: 1 1 60%;
 }
 
-.crime-card img {
-    display: flex;
+.card-image {
+    flex: 1 1 35%;
+    max-width: 300px;
 }
 
-/* ===== Delete Button ===== */
+.evidence-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+/* ---------- Delete Button ---------- */
+
 .delete-button {
+    width: 50%;
     background-color: #e74c3c;
     padding: 8px 14px;
     font-size: 0.9rem;
@@ -177,7 +201,8 @@ button:hover {
     background-color: #c0392b;
 }
 
-/* ===== Footer Small Text ===== */
+/* ---------- Small Text Links ---------- */
+
 .small-text {
     font-size: 0.85rem;
     color: #bbb;
@@ -193,8 +218,23 @@ button:hover {
     text-decoration: underline;
 }
 
+/* ---------- Responsive ---------- */
 
+@media screen and (max-width: 768px) {
+    .crime-card {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .card-details,
+    .card-image {
+        width: 100%;
+    }
+
+    .evidence-img {
+        max-width: 100%;
+    }
+}
 
 @media screen and (max-width: 600px) {
     .container {
